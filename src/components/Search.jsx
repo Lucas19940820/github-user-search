@@ -7,7 +7,7 @@ const Search = ({ onSearch }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSearch({ username, location, repoCount });
+        onSearch(username); // Use username only for GitHub user search
     };
 
     return (
@@ -34,4 +34,5 @@ const Search = ({ onSearch }) => {
         </form>
     );
 };
+
 export default Search;

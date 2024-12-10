@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Search from './components/Search';
-import fetchUserData from './services/githubService';
+import githubServices from './services/githubService';
+
+const { fetchUserData } = githubServices;
 
 function App() {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const handleSearch = async (filters) => {
+    const handleSearch = async (username) => {
         setLoading(true);
         setError(null);
         try {
